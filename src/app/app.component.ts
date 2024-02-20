@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SubmitQuestionComponent } from './question/component/submit-question/submit-question.component';
+import { SubmitQuestionComponent } from './question/component/submit-question/component/submit-question.component';
 
 import { NavigationBarComponent } from './navigation-bar/component/navigation-bar.component';
 
