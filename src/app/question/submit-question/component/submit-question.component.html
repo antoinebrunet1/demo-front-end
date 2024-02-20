@@ -15,6 +15,18 @@
                 <mat-hint align="end">{{ body.value.length }} / 255</mat-hint>
             </mat-form-field>
         </div>
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <input
+                matInput
+                name="category"
+                placeholder="Category"
+                #category
+                ngModel
+                required
+                maxlength="255">
+                <mat-hint align="end">{{ category.value.length }} / 255</mat-hint>
+        </mat-form-field>
         <div>
             <label class="mat-body" id="example-radio-group-label">Select a difficulty level.*</label>
             <mat-radio-group
