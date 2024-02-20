@@ -1,0 +1,7 @@
+<p>
+    <mat-toolbar color="primary">
+        <span>{{ title }}</span>
+        <span class="example-spacer"></span>
+        <a *ngFor="let item of pagesTitlesAndLinks" mat-flat-button [color]="('/' + item.routerLink) === router.url ? 'accent' : 'primary'" [routerLink]="item.routerLink">{{ item.title }}</a>
+    </mat-toolbar>
+</p>
