@@ -33,13 +33,8 @@ export class SubmitQuestionComponent {
     DifficultyLevelAsString.ADVANCED
   ];
   private question: Question = new Question();
-  // body: string;
 
   constructor(private questionService: QuestionService, public dialog: MatDialog, private valueSharingService: ValueSharingService) {}
-
-  // onChangeOfBody(event: any): void {
-  //   this.body = event;
-  // }
 
   submitQuestion(form: NgForm): void {
     const formValue: any = form.value;
