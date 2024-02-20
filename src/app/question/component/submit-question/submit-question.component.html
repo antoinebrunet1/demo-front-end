@@ -1,0 +1,50 @@
+<div id="main-div">
+    <h1 class="mat-h1">Submit a Question</h1>
+    <form #myForm="ngForm" (ngSubmit)="submitQuestion(myForm)" id="submit-question-form">
+        <div id="question-body-div">
+            <mat-form-field>
+                <mat-label>Body</mat-label>
+                <textarea
+                    matInput
+                    name="body"
+                    placeholder="Body"
+                    #body
+                    ngModel
+                    required
+                    maxlength="255"></textarea>
+                <mat-hint align="end">{{ body.value.length }} / 255</mat-hint>
+            </mat-form-field>
+        </div>
+        <div>
+            <label class="mat-body" id="example-radio-group-label">Select a difficulty level.*</label>
+            <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                name="difficultyLevelAsString"
+                required
+                ngModel>
+                @for (difficultyLevelAsString of difficultyLevelsAsStrings; track difficultyLevelAsString) {
+                    <mat-radio-button
+                        color="primary"
+                        class="example-radio-button"
+                        [value]="difficultyLevelAsString">
+                        {{ difficultyLevelAsString }}
+                    </mat-radio-button>
+                }
+            </mat-radio-group>
+        </div>
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input
+                matInput
+                name="author"
+                placeholder="Author"
+                #author
+                ngModel
+                required
+                maxlength="255">
+                <mat-hint align="end">{{ author.value.length }} / 255</mat-hint>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="myForm.invalid">Submit</button>
+    </form>
+</div>

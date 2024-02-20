@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SubmitQuestionComponent } from './question/component/submit-question/submit-question.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    SubmitQuestionComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Submission Status</h2>
+<container-element [ngSwitch]="valueSharingService.submissionIsSuccessful.toString()">
+  <mat-dialog-content *ngSwitchCase="'true'">Your question was submitted successfully.</mat-dialog-content>
+  <mat-dialog-content *ngSwitchCase="'false'">Your question was not submitted successfully.</mat-dialog-content>
+</container-element>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
