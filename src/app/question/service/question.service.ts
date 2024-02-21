@@ -14,7 +14,7 @@ export class QuestionService {
   saveQuestion(question: Question) {
     const url: string = Constant.API_END_POINT + Constant.METHODS.SAVE_QUESTION;
 
-    return this.httpClient.post<Question>(url, question, { observe: 'response' });
+    return this.httpClient.post<Question>(url, question);
   }
 
   getDifficultyLevelNumberFromString(difficultyLevelAsString: string): number {
@@ -27,6 +27,25 @@ export class QuestionService {
         return DifficultyLevelAsNumber.ADVANCED;
       default:
         throw new Error("The string difficulty level is not valid.");
+    }
+  }
+
+  getAllQuestions() {
+    const url: string = Constant.API_END_POINT + Constant.METHODS.GET_ALL_QUESTIONS;
+
+    return this.httpClient.get<Question[]>(url);
+  }
+
+  getDifficultyLevelNumberFromNumber(difficultyLevelAsNumber: number): string {
+    switch(difficultyLevelAsNumber) {
+      case DifficultyLevelAsNumber.BASIC:
+        return DifficultyLevelAsString.BASIC;
+      case DifficultyLevelAsNumber.INTERMIDIATE:
+        return DifficultyLevelAsString.INTERMIDIATE;
+      case DifficultyLevelAsNumber.ADVANCED:
+        return DifficultyLevelAsString.ADVANCED;
+      default:
+        throw new Error("The number difficulty level is not valid.");
     }
   }
 }

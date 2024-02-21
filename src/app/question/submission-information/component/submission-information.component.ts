@@ -7,7 +7,7 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { ValueSharingService } from '../../../service/value-sharing.service';
+import { ValueSharingService } from '../../service/value-sharing.service';
 
 @Component({
   selector: 'app-submission-information',
